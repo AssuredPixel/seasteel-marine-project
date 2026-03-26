@@ -111,6 +111,8 @@ export default function FleetOverview() {
             src="/images/fleet-panorama.png"
             alt="Offshore Fleet Panorama"
             fill
+            loading="lazy"
+            sizes="100vw"
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           

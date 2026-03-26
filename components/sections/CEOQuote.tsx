@@ -23,7 +23,9 @@ export default function CEOQuote() {
                 <Image
                   src="/images/ceo-joseph.png"
                   alt="Chief (Engr) Joseph Justin Akpan"
-                  fill
+                  width={120}
+                  height={120}
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>

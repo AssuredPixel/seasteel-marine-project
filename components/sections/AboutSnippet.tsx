@@ -47,13 +47,15 @@ export default function AboutSnippet() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:w-[45%] relative group"
+            className="w-full lg:w-[45%] relative group aspect-[4/5]"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+            <div className="relative w-full h-full overflow-hidden rounded-sm shadow-2xl">
               <Image
                 src="/images/about-port.png"
                 alt="Offshore Port Facility"
                 fill
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Corner Accents (Cyan Brackets) */}

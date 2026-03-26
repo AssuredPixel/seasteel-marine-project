@@ -12,6 +12,8 @@ export default function CTABanner() {
           src="/images/cta-rig.png"
           alt="Offshore Rig Background"
           fill
+          loading="lazy"
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-navy/80 backdrop-blur-[2px]" />
