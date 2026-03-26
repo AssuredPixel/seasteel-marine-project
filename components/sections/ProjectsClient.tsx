@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
@@ -43,6 +43,15 @@ const partners = [
 
 export default function ProjectsClient() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const filteredProjects = activeCategory === "All" 
     ? projects 
@@ -60,18 +69,24 @@ export default function ProjectsClient() {
           backgroundImage="/images/fleet-panorama.png"
         />
 
-        {/* Filter Bar */}
-        <section className="py-12 bg-white border-b border-gray-100 sticky top-20 z-20">
+        {/* Filter Bar - SHRINK ON SCROLL IMPLEMENTED */}
+        <section 
+          className={`sticky top-20 z-20 w-full transition-all duration-500 border-b border-gray-100 ${
+            isScrolled 
+              ? "py-6 bg-white/95 backdrop-blur-md shadow-2xl" 
+              : "py-12 bg-white"
+          }`}
+        >
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex overflow-x-auto lg:flex-wrap lg:justify-center gap-3 pb-4 lg:pb-0 no-scrollbar">
               {projectCategories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-3 rounded-full text-sm font-body font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
+                  className={`px-6 py-3 rounded-full text-xs md:text-sm font-body font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
                     activeCategory === cat 
                       ? "bg-cyan text-white shadow-lg scale-105" 
-                      : "bg-surface text-navy hover:bg-gray-200"
+                      : "bg-surface-muted text-navy hover:bg-gray-200"
                   }`}
                 >
                   {cat}

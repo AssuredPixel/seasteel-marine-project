@@ -8,7 +8,8 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Globe 
+  Globe,
+  MessageCircle // Added WhatsApp
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -50,10 +51,11 @@ export default function Footer() {
               </span>
             </LinkNext>
             <p className="text-gray-300 font-body leading-relaxed max-w-xs">
-              The Exceptional Service Provider.
+              The Exceptional Marine Service Provider.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               {[
+                { Icon: MessageCircle, href: "https://wa.me/2348036692362" }, // WhatsApp First
                 { Icon: Linkedin, href: "#" },
                 { Icon: Facebook, href: "#" },
                 { Icon: Twitter, href: "#" },
@@ -61,7 +63,9 @@ export default function Footer() {
                 <a
                   key={idx}
                   href={href}
-                  className="w-10 h-10 rounded-full bg-cyan flex items-center justify-center text-white hover:bg-cyan-dark transition-all duration-300 shadow-glow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-cyan flex items-center justify-center text-white hover:bg-cyan-bright hover:scale-110 transition-all duration-300 shadow-glow"
                   aria-label="Social link"
                 >
                   <Icon size={20} />
@@ -80,7 +84,7 @@ export default function Footer() {
                 <li key={label}>
                   <LinkNext 
                     href={href} 
-                    className="text-gray-300 hover:text-cyan transition-colors duration-200 font-body"
+                    className="text-gray-300 hover:text-cyan transition-colors duration-200 font-body text-sm"
                   >
                     {label}
                   </LinkNext>
@@ -99,7 +103,7 @@ export default function Footer() {
                 <li key={label}>
                   <LinkNext 
                     href={href} 
-                    className="text-gray-300 hover:text-cyan transition-colors duration-200 font-body"
+                    className="text-gray-300 hover:text-cyan transition-colors duration-200 font-body text-sm"
                   >
                     {label}
                   </LinkNext>
@@ -111,31 +115,27 @@ export default function Footer() {
           {/* Column 4: Contact Info */}
           <div className="space-y-6">
             <h4 className="font-heading text-lg font-bold mb-6 text-white border-b border-cyan/20 pb-2 inline-block">
-              Contact Info
+              Get in Touch
             </h4>
-            <div className="space-y-4 text-gray-300 font-body flex flex-col items-center md:items-start">
+            <div className="space-y-4 text-gray-300 font-body flex flex-col items-center md:items-start text-sm">
               <div className="flex gap-3">
-                <MapPin className="text-cyan shrink-0" size={20} />
-                <span className="text-sm leading-snug">
+                <MapPin className="text-cyan shrink-0" size={18} />
+                <span>
                   No. 5 Afaha Uqua–Obokidim Street, Eket L.G.A, Akwa Ibom State
                 </span>
               </div>
-              <div className="flex gap-3 items-center">
-                <Phone className="text-cyan shrink-0" size={20} />
-                <div className="flex flex-col text-sm">
-                  <span>+234 803 669 2362</span>
-                  <span>+234 906 696 2627</span>
-                  <span>+234 808 802 7241</span>
-                </div>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Mail className="text-cyan shrink-0" size={20} />
-                <span className="text-sm">seasteelmarine@gmail.com</span>
-              </div>
-              <div className="flex gap-3 items-center">
-                <Globe className="text-cyan shrink-0" size={20} />
-                <span className="text-sm">www.seastealmarine.com</span>
-              </div>
+              <a href="tel:+2348036692362" className="flex gap-3 items-center hover:text-cyan transition-colors">
+                <Phone className="text-cyan shrink-0" size={18} />
+                <span>+234 803 669 2362</span>
+              </a>
+              <a href="https://wa.me/2348036692362" className="flex gap-3 items-center hover:text-cyan transition-colors font-bold">
+                <MessageCircle className="text-cyan shrink-0" size={18} />
+                <span>WhatsApp Available</span>
+              </a>
+              <a href="mailto:seasteelmarine@gmail.com" className="flex gap-3 items-center hover:text-cyan transition-colors">
+                <Mail className="text-cyan shrink-0" size={18} />
+                <span>seasteelmarine@gmail.com</span>
+              </a>
             </div>
           </div>
 
@@ -143,12 +143,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/5 py-6">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-300 font-body text-center md:text-left">
+      <div className="border-t border-white/5 py-6 bg-navy-dark">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400 font-body text-center md:text-left">
           <p>
-            &copy; {year || "2026"} Seasteel Marine. All rights reserved.
+            &copy; {year || "2026"} Seasteel Marine & Offshore Services Limited. All rights reserved.
           </p>
-          <p className="font-medium">
+          <p className="font-medium tracking-widest text-cyan/60">
             RC 1060991
           </p>
         </div>
