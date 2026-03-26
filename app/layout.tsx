@@ -17,29 +17,57 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://seasteelmarine.com"),
   title: {
-    default: "Seasteel Marine | Engineering Excellence at Sea",
+    default: "Seasteel Marine & Offshore Services | Nigeria's Premier Marine Company",
     template: "%s | Seasteel Marine",
   },
   description:
-    "Seasteel Marine delivers world-class marine engineering, shipbuilding, and offshore solutions. Trusted expertise built on decades of industry experience.",
+    "Seasteel Marine delivers world-class marine engineering, shipbuilding, and offshore solutions. Trusted expertise since 2012.",
   keywords: [
-    "marine engineering",
-    "shipbuilding",
-    "offshore solutions",
-    "naval architecture",
-    "Seasteel",
+    "marine engineering nigeria",
+    "offshore services akwa ibom",
+    "vessel chartering west africa",
+    "shipbuilding services",
+    "maritime solutions",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://seasteel.com",
+    url: "https://seasteelmarine.com",
     siteName: "Seasteel Marine",
-    title: "Seasteel Marine | Engineering Excellence at Sea",
+    title: "Seasteel Marine & Offshore Services | Nigeria's Premier Marine Company",
     description:
-      "World-class marine engineering, shipbuilding, and offshore solutions.",
+      "World-class marine engineering, shipbuilding, and offshore solutions. Delivering excellence since 2012.",
+    images: [
+      {
+        url: "/images/hero-ship.png",
+        width: 1200,
+        height: 630,
+        alt: "Seasteel Marine Offshore Support Vessel",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seasteel Marine & Offshore Services",
+    description: "Nigeria's Premier Marine Engineering & Offshore Services Provider.",
+    images: ["/images/hero-ship.png"],
   },
 };
+
+import BackToTop from "@/components/ui/BackToTop";
 
 export default function RootLayout({
   children,
@@ -52,6 +80,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <BackToTop />
       </body>
     </html>
   );

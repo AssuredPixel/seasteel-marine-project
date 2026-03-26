@@ -1,11 +1,20 @@
-"use client";
+import { Metadata } from "next";
+import ProjectsClient from "@/components/sections/ProjectsClient";
 
-import { useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import PageHero from "@/components/ui/PageHero";
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Our Projects | Marine & Offshore Portfolio — Seasteel Marine",
+    description: "A showcase of our successful offshore and marine engineering projects delivered across the Atlantic corridor.",
+    alternates: {
+      canonical: "/projects",
+    },
+    openGraph: {
+      title: "Our Projects | Marine & Offshore Portfolio — Seasteel Marine",
+      description: "A showcase of our successful offshore and marine engineering projects delivered across the Atlantic corridor.",
+      url: "https://seasteelmarine.com/projects",
+    },
+  };
+}
 
 const projectCategories = [
   "All",
@@ -41,134 +50,5 @@ const partners = [
 ];
 
 export default function ProjectsPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(p => p.category === activeCategory);
-
-  return (
-    <>
-      <Navbar />
-      <main className="bg-white">
-        {/* Header */}
-        <PageHero 
-          title="Our Projects"
-          subtitle="Delivering Excellence Across Nigerian Waters and Beyond"
-          breadcrumb="Projects"
-          backgroundImage="/images/fleet-panorama.png"
-        />
-
-        {/* Filter Bar */}
-        <section className="py-12 bg-white border-b border-gray-100 sticky top-20 z-20">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex overflow-x-auto lg:flex-wrap lg:justify-center gap-3 pb-4 lg:pb-0 no-scrollbar">
-              {projectCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-3 rounded-full text-sm font-body font-black uppercase tracking-widest transition-all duration-300 whitespace-nowrap ${
-                    activeCategory === cat 
-                      ? "bg-cyan text-white shadow-lg scale-105" 
-                      : "bg-surface text-navy hover:bg-gray-200"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Grid */}
-        <section className="py-24 bg-surface px-6 min-h-[800px]">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              layout
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    className="group relative h-[280px] rounded-xl overflow-hidden shadow-md cursor-pointer"
-                  >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent group-hover:bg-navy/80 transition-colors duration-500" />
-                    
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <span className="inline-block bg-cyan text-white text-[10px] font-heading font-black px-3 py-1 rounded-full uppercase tracking-widest mb-3">
-                        {project.category}
-                      </span>
-                      <h3 className="text-white text-xl font-heading font-bold mb-4 drop-shadow-lg">
-                        {project.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-cyan font-body font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                        View Details <span>→</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Partners Section */}
-        <section className="py-24 bg-white px-6 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="text-cyan text-xs font-heading font-black uppercase tracking-[0.3em] block mb-4">Verification</span>
-              <h2 className="text-navy text-3xl md:text-4xl font-heading font-black italic">
-                Our Esteemed Clients & Partners
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-              {partners.map((partner, index) => (
-                <div 
-                  key={index}
-                  className="bg-white p-6 rounded-[16px] border border-gray-200 shadow-sm hover:border-cyan hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-center group"
-                >
-                  <span className="text-navy font-heading font-black text-[15px] opacity-80 group-hover:opacity-100 group-hover:text-cyan transition-colors">
-                    {partner}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-navy py-24 px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-white text-3xl md:text-[40px] font-heading font-black leading-tight mb-10">
-              Deliver Your Next Offshore <br className="hidden md:block" /> Project With Precision.
-            </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto bg-cyan text-white px-10 py-5 rounded-[6px] font-body font-bold text-[15px] hover:bg-cyan-bright transition-all shadow-xl">
-                Partner With Us
-              </button>
-              <button className="w-full sm:w-auto border-2 border-white text-white px-10 py-[18px] rounded-[6px] font-body font-bold text-[15px] hover:bg-white hover:text-navy transition-all">
-                Project Gallery
-              </button>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+  return <ProjectsClient />;
 }

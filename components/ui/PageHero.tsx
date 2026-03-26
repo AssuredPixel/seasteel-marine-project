@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface PageHeroProps {
@@ -57,9 +58,12 @@ export default function PageHero({
 
           {/* Breadcrumb */}
           <div className="flex items-center justify-center gap-2">
-            <span className="text-gray-400 text-[12px] uppercase tracking-widest font-heading font-bold">
+            <Link 
+              href="/" 
+              className="text-gray-400 hover:text-cyan text-[12px] uppercase tracking-widest font-heading font-bold transition-colors"
+            >
               Home
-            </span>
+            </Link>
             <span className="text-gray-600 text-[10px]">&gt;</span>
             <span className="text-gray-300 text-[12px] uppercase tracking-widest font-heading font-bold">
               {breadcrumb}

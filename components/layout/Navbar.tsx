@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -60,18 +61,13 @@ export default function Navbar() {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <Link href="/" className="flex items-center shrink-0">
-            <img
-              src="/images/logo-placeholder.png"
+            <Image
+              src="/images/logo.svg"
               alt="Seasteel Logo"
+              width={160}
+              height={40}
+              priority
               className="h-8 w-auto object-contain"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
-                (e.target as HTMLImageElement).parentElement!.innerHTML += `
-                  <span class="font-heading text-xl font-bold tracking-tight text-white line-clamp-1">
-                    Sea<span class="text-cyan">steel</span>
-                  </span>
-                `;
-              }}
             />
           </Link>
         </motion.div>

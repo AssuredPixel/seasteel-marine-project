@@ -11,10 +11,20 @@ import {
   Building2, Zap 
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Services | Seasteel Marine",
-  description: "Comprehensive marine and offshore solutions for the oil, gas, and maritime industries.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Our Services | Marine & Offshore Solutions — Seasteel Marine",
+    description: "Explore our comprehensive range of marine engineering, shipbuilding, and offshore support services.",
+    alternates: {
+      canonical: "/services",
+    },
+    openGraph: {
+      title: "Our Services | Marine & Offshore Solutions — Seasteel Marine",
+      description: "Explore our comprehensive range of marine engineering, shipbuilding, and offshore support services.",
+      url: "https://seasteelmarine.com/services",
+    },
+  };
+}
 
 const allServices = [
   { name: "Vessel Management & Operations", icon: Ship, desc: "End-to-end management of offshore vessels, ensuring peak operational efficiency and safety compliance." },
@@ -149,6 +159,8 @@ export default function ServicesPage() {
               src="/images/cta-rig.png"
               alt="Offshore Support"
               fill
+              loading="lazy"
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-navy/85" />

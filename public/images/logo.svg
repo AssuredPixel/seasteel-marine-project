@@ -1,0 +1,6 @@
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 8L22 18L12 28L2 18L12 8Z" fill="#00E5FF"/>
+  <path d="M12 12L18 18L12 24L6 18L12 12Z" fill="#001F3F"/>
+  <rect x="28" y="10" width="120" height="20" rx="2" fill="none"/>
+  <text x="28" y="28" fill="white" style="font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -0.05em;">Sea<tspan fill="#00E5FF">steel</tspan></text>
+</svg>

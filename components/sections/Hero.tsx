@@ -51,17 +51,17 @@ export default function Hero() {
       </div>
 
       {/* Content Container */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 relative z-20 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-32 md:pt-40 relative z-20 w-full flex justify-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl"
+          className="max-w-4xl flex flex-col items-center text-center"
         >
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-heading text-white text-[36px] md:text-[68px] leading-[1.1] md:leading-[1.2] font-black tracking-tight mb-8"
+            className="font-heading text-white text-[36px] md:text-[60px] leading-[1.15] md:leading-[1.2] font-black tracking-tight mb-8"
           >
             Nigeria&apos;s Premier Marine &{" "}
             <span className="text-cyan-bright block">
@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Subtext */}
           <motion.p
             variants={itemVariants}
-            className="font-body text-white/80 text-lg md:text-[18px] leading-relaxed mb-12 max-w-2xl"
+            className="font-body text-white/80 text-lg md:text-[19px] leading-relaxed mb-10 max-w-2xl mx-auto"
           >
             Delivering world-class technical solutions for Africa&apos;s
             offshore energy sector, since 2012.
@@ -81,35 +81,35 @@ export default function Hero() {
           {/* CTA Buttons */}
           <motion.div 
             variants={itemVariants} 
-            className="flex flex-col sm:flex-row gap-4 items-center mb-20"
+            className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16 w-full"
           >
             <Link
               href="/services"
-              className="w-full sm:w-auto px-8 py-4 bg-cyan-bright text-white text-center font-body font-bold rounded-[6px] hover:bg-cyan-dark transition-all duration-300 shadow-glow active:scale-95"
+              className="w-full sm:w-auto px-10 py-4 bg-cyan-bright text-white text-center font-body font-bold rounded-[6px] hover:bg-cyan-dark transition-all duration-300 shadow-glow active:scale-95 text-[15px]"
             >
               Explore Our Services
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto px-8 py-4 border-2 border-white text-white text-center font-body font-bold rounded-[6px] hover:bg-white hover:text-navy transition-all duration-300 active:scale-95"
+              className="w-full sm:w-auto px-10 py-4 border-2 border-white text-white text-center font-body font-bold rounded-[6px] hover:bg-white hover:text-navy transition-all duration-300 active:scale-95 text-[15px]"
             >
               Contact Fleet
             </Link>
           </motion.div>
 
-          {/* Floating Stats Card (Now integrated into variants) */}
+          {/* Floating Stats Card - Scaled Down */}
           <motion.div
             variants={itemVariants}
-            className="z-20 w-full lg:w-fit"
+            className="z-20 w-full flex justify-center"
           >
-            <div className="bg-navy p-6 md:p-10 rounded-[8px] border-l-4 border-cyan-bright shadow-2xl">
-              <div className="flex flex-col sm:flex-row items-center justify-between lg:justify-start gap-8 md:gap-20">
+            <div className="bg-navy px-6 py-6 md:px-10 md:py-8 rounded-[12px] border-t-4 md:border-t-0 md:border-l-4 border-cyan-bright shadow-2xl">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12">
                 {stats.map((stat, idx) => (
-                  <div key={idx} className="flex flex-col text-center lg:text-left">
-                    <span className="text-cyan-bright text-4xl font-heading font-black mb-1">
+                  <div key={idx} className="flex flex-col text-center">
+                    <span className="text-cyan-bright text-3xl md:text-4xl font-heading font-black mb-1">
                       {stat.value}
                     </span>
-                    <span className="text-white/60 text-[10px] font-body font-bold uppercase tracking-[0.1em]">
+                    <span className="text-white/60 text-[9px] md:text-[10px] font-body font-bold uppercase tracking-[0.2em]">
                       {stat.label}
                     </span>
                   </div>
