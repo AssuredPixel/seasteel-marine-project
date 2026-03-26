@@ -62,30 +62,32 @@ export default function CoreValues() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 px-4">
           <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="text-white text-3xl md:text-[36px] font-heading font-bold"
           >
             Our Core Values
           </motion.h2>
-          <div className="w-20 h-1 bg-cyan mx-auto mt-6 rounded-full" />
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ once: true }}
+            className="h-1 bg-cyan mx-auto mt-6 rounded-full" 
+          />
         </div>
 
         {/* Values Row/Column */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {values.map((value, idx) => (
             <motion.div
               key={idx}
-              variants={cardVariants}
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
               whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
               className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl transition-colors duration-300 group"
             >
@@ -102,7 +104,7 @@ export default function CoreValues() {
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>

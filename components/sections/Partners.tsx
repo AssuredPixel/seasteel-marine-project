@@ -40,11 +40,11 @@ export default function Partners() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <motion.span 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="text-cyan-bright text-xs font-heading font-black uppercase tracking-[0.2em] block"
           >
             Powering Industry Leaders

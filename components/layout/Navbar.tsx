@@ -46,8 +46,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy ${
-        scrolled ? "border-t border-white/10 shadow-lg" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-navy/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1" 
+          : "bg-transparent py-2"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
@@ -133,51 +135,77 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-navy flex flex-col p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-navy flex flex-col"
           >
-            <div className="flex items-center justify-between mb-12">
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                <span className="font-heading text-2xl font-bold text-white">
-                  Sea<span className="text-cyan">steel</span>
-                </span>
-              </Link>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-white p-2"
-                aria-label="Close menu"
-              >
-                <X size={32} />
-              </button>
-            </div>
+            {/* Background Pattern/Blur */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan/10 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col h-full p-8 md:p-12">
+              <div className="flex items-center justify-between mb-16">
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  <span className="font-heading text-2xl font-bold text-white tracking-tight">
+                    Sea<span className="text-cyan">steel</span>
+                  </span>
+                </Link>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="bg-white/5 hover:bg-white/10 text-white p-3 rounded-full transition-colors border border-white/10"
+                  aria-label="Close menu"
+                >
+                  <X size={28} />
+                </button>
+              </div>
 
-            <ul className="flex flex-col gap-8">
-              {navLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-2xl font-body font-semibold transition-colors ${
-                      pathname === href ? "text-cyan" : "text-white"
-                    }`}
+              <motion.ul 
+                variants={{
+                  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+                  hidden: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
+                }}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-6"
+              >
+                {navLinks.map(({ href, label }) => (
+                  <motion.li 
+                    key={href}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 }
+                    }}
                   >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Link
+                      href={href}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-4xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${
+                        pathname === href ? "text-cyan" : "text-white/90 hover:text-white"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </motion.ul>
 
-            <div className="mt-auto">
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="w-full bg-cyan text-white font-body font-bold text-lg px-8 py-4 rounded-[6px] hover:bg-cyan-dark transition-colors block text-center"
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-auto pt-12 border-t border-white/10"
               >
-                Get a Quote
-              </Link>
+                <p className="text-white/50 font-body text-sm mb-6 uppercase tracking-widest font-bold">
+                  Get in Touch
+                </p>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full bg-cyan text-white font-body font-bold text-lg px-8 py-5 rounded-[8px] hover:bg-cyan-dark transition-all duration-300 block text-center shadow-glow active:scale-[0.98]"
+                >
+                  Get a Quote
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

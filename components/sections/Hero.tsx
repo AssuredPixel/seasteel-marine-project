@@ -60,7 +60,7 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-heading text-white text-4xl md:text-[68px] leading-[1.2] font-black tracking-tight mb-8"
+            className="font-heading text-white text-[36px] md:text-[68px] leading-[1.1] md:leading-[1.2] font-black tracking-tight mb-8"
           >
             Nigeria&apos;s Premier Marine &{" "}
             <span className="text-cyan-bright block">

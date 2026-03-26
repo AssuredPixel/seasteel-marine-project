@@ -43,7 +43,7 @@ export default function PageHero({
           </span>
 
           {/* Title */}
-          <h1 className="text-white text-4xl md:text-[52px] font-heading font-black leading-tight mb-6">
+          <h1 className="text-white text-[36px] md:text-[52px] font-heading font-black leading-tight mb-6">
             {title}
           </h1>
 

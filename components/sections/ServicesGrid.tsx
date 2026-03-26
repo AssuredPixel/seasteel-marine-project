@@ -71,19 +71,19 @@ export default function ServicesGrid() {
     <section className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Headers */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 px-4">
           <motion.span 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="text-cyan-bright text-xs font-heading font-black uppercase tracking-[0.2em] block mb-4"
           >
             Our Services
           </motion.span>
           <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: 0.1 }}
             className="text-navy text-3xl md:text-[36px] font-heading font-bold leading-tight"
           >

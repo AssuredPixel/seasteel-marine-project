@@ -39,10 +39,10 @@ export default function CEOQuote() {
 
           {/* Right Column: Quote */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
             className="lg:col-span-7 relative"
           >
             {/* Giant Quote Icon */}
@@ -56,7 +56,12 @@ export default function CEOQuote() {
               </blockquote>
               
               <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-[1px] bg-cyan" />
+                <motion.div 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 48 }}
+                  viewport={{ once: true }}
+                  className="h-[1px] bg-cyan" 
+                />
                 <span className="text-cyan font-heading font-black text-xs uppercase tracking-[0.2em]">
                   Mission Statement
                 </span>

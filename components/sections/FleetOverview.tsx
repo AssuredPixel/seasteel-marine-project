@@ -47,28 +47,28 @@ export default function FleetOverview() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Headers */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <motion.span 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             className="text-cyan text-xs font-heading font-black uppercase tracking-[0.2em] block mb-4"
           >
             Maritime Assets
           </motion.span>
           <motion.h2 
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: 0.1 }}
             className="text-white text-3xl md:text-[36px] font-heading font-bold"
           >
             Our Offshore Fleet
           </motion.h2>
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: 0.2 }}
             className="text-cyan font-body text-[16px] mt-4 max-w-2xl mx-auto"
           >
@@ -76,20 +76,20 @@ export default function FleetOverview() {
           </motion.p>
         </div>
 
-        {/* Fleet Badges Row */}
+        {/* Fleet Badges Row (Horizontal Scroll on Mobile) */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex overflow-x-auto md:flex-wrap md:justify-center gap-4 mb-16 pb-6 md:pb-0 no-scrollbar items-center"
+          className="flex overflow-x-auto md:flex-wrap md:justify-center gap-4 mb-16 pb-6 md:pb-0 no-scrollbar snap-x snap-mandatory scroll-smooth"
         >
           {fleetTypes.map((type, idx) => (
             <motion.div
               key={idx}
               variants={badgeVariants}
               whileHover={{ y: -3 }}
-              className="bg-white px-6 py-3 rounded-full flex items-center gap-3 shadow-md border border-white/10 group cursor-default"
+              className="bg-white px-6 py-3 rounded-full flex items-center gap-3 shadow-md border border-white/10 group cursor-default shrink-0 snap-center"
             >
               <type.icon size={18} className="text-cyan group-hover:scale-110 transition-transform" />
               <span className="text-navy font-body font-bold text-[14px] uppercase tracking-wider">
