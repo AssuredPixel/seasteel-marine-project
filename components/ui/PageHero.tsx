@@ -18,14 +18,14 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative w-full h-[280px] md:h-[420px] flex items-center justify-center overflow-hidden">
-      {/* Background with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src={backgroundImage}
           alt={title}
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-navy/75 backdrop-blur-[1px]" />
       </div>

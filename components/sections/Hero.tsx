@@ -37,12 +37,13 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/hero-ship.png"
           alt="Offshore Container Ship"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         {/* Navy Overlay (70% opacity) */}
