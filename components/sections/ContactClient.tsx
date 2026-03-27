@@ -107,7 +107,7 @@ function ContactContent() {
                           name="name"
                           type="text" 
                           placeholder="John Doe"
-                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] transition-all"
+                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] text-navy placeholder:text-gray-400 transition-all"
                         />
                       </div>
                       <div className="flex flex-col">
@@ -116,7 +116,7 @@ function ContactContent() {
                           name="company"
                           type="text" 
                           placeholder="Acme Corp"
-                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] transition-all"
+                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] text-navy placeholder:text-gray-400 transition-all"
                         />
                       </div>
                     </div>
@@ -129,7 +129,7 @@ function ContactContent() {
                           name="email"
                           type="email" 
                           placeholder="john@example.com"
-                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] transition-all"
+                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] text-navy placeholder:text-gray-400 transition-all"
                         />
                       </div>
                       <div className="flex flex-col">
@@ -138,7 +138,7 @@ function ContactContent() {
                           name="phone"
                           type="tel" 
                           placeholder="+234..."
-                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] transition-all"
+                          className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] text-navy placeholder:text-gray-400 transition-all"
                         />
                       </div>
                     </div>
@@ -148,7 +148,7 @@ function ContactContent() {
                       <select 
                         name="service"
                         defaultValue={preselectedService}
-                        className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] transition-all appearance-none cursor-pointer"
+                        className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] text-navy transition-all appearance-none cursor-pointer"
                       >
                         <option value="">Select a service...</option>
                         {services.map((service, idx) => (
