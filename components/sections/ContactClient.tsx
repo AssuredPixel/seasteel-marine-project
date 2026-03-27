@@ -164,7 +164,7 @@ function ContactContent() {
                         name="message"
                         rows={5}
                         placeholder="Tell us about your requirements..."
-                        className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] transition-all"
+                        className="w-full bg-surface-muted border-b-2 border-transparent focus:border-navy focus:outline-none rounded-lg px-4 py-3 font-body text-[15px] text-navy placeholder:text-gray-400 transition-all"
                       ></textarea>
                     </div>
 
