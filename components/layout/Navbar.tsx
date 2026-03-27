@@ -57,8 +57,9 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
           ? "bg-navy/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1" 
           : "bg-navy md:bg-transparent py-2 md:py-4 border-b border-white/10 md:border-transparent"
@@ -137,9 +138,10 @@ export default function Navbar() {
           <Menu size={28} />
         </button>
       </nav>
+    </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
+    {/* Mobile Menu Overlay */}
+    <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -217,6 +219,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
