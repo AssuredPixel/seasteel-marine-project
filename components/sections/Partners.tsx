@@ -64,9 +64,9 @@ export default function Partners() {
               key={idx}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-[16px] border border-gray-100 shadow-sm hover:shadow-md hover:border-cyan transition-all duration-300 flex items-center justify-center min-h-[120px] text-center"
+              className="bg-white p-4 md:p-8 rounded-[16px] border border-gray-100 shadow-sm hover:shadow-md hover:border-cyan transition-all duration-300 flex items-center justify-center min-h-[90px] md:min-h-[120px] text-center"
             >
-              <h3 className="text-navy font-body font-bold text-[16px] leading-tight px-4 cursor-default">
+              <h3 className="text-navy font-body font-bold text-[13px] md:text-[16px] leading-tight px-1 md:px-4 cursor-default break-words">
                 {partner}
               </h3>
             </motion.div>

@@ -102,14 +102,14 @@ export default function Hero() {
             variants={itemVariants}
             className="z-20 w-full flex justify-center"
           >
-            <div className="bg-navy px-6 py-6 md:px-10 md:py-8 rounded-[12px] border-t-4 md:border-t-0 md:border-l-4 border-cyan-bright shadow-2xl">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12">
+            <div className="bg-navy px-4 py-4 md:px-10 md:py-8 w-full mx-auto rounded-[12px] border-t-4 md:border-t-0 md:border-l-4 border-cyan-bright shadow-2xl">
+              <div className="flex flex-row items-center justify-between sm:justify-center gap-3 sm:gap-6 md:gap-12">
                 {stats.map((stat, idx) => (
                   <div key={idx} className="flex flex-col text-center">
-                    <span className="text-cyan-bright text-3xl md:text-4xl font-heading font-black mb-1">
+                    <span className="text-cyan-bright text-xl sm:text-3xl md:text-4xl font-heading font-black mb-1">
                       {stat.value}
                     </span>
-                    <span className="text-white/60 text-[9px] md:text-[10px] font-body font-bold uppercase tracking-[0.2em]">
+                    <span className="text-white/60 text-[8px] sm:text-[9px] md:text-[10px] font-body font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] whitespace-nowrap">
                       {stat.label}
                     </span>
                   </div>

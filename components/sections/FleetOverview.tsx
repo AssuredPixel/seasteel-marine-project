@@ -125,18 +125,18 @@ export default function FleetOverview() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="absolute bottom-10 left-6 md:left-10 bg-navy/80 border border-white/10 backdrop-blur-md p-8 md:p-10 rounded-xl max-w-[320px] shadow-2xl"
+            className="absolute bottom-4 left-4 right-4 md:right-auto md:bottom-10 md:left-10 bg-navy/90 border border-white/10 backdrop-blur-md p-5 md:p-10 rounded-xl md:max-w-[320px] shadow-2xl"
           >
-            <h3 className="text-white text-2xl font-heading font-bold mb-2">
+            <h3 className="text-white text-[16px] md:text-2xl font-heading font-bold mb-1 md:mb-2">
               Precision at Sea
             </h3>
-            <p className="text-gray-300 font-body text-sm leading-relaxed">
+            <p className="text-gray-300 font-body text-[12px] md:text-sm leading-snug md:leading-relaxed line-clamp-2 md:line-clamp-none">
               Equipped with advanced DP systems and specialized technical capabilities 
               for deepwater and shallow-water support.
             </p>
-            <div className="mt-6 flex items-center gap-2">
-              <div className="w-8 h-[2px] bg-cyan" />
-              <span className="text-cyan text-xs font-black uppercase tracking-widest">
+            <div className="mt-3 md:mt-6 flex items-center gap-2">
+              <div className="w-6 md:w-8 h-[2px] bg-cyan" />
+              <span className="text-cyan text-[10px] md:text-xs font-black uppercase tracking-widest">
                 Fleet Capacity
               </span>
             </div>
