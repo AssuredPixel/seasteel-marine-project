@@ -8,7 +8,6 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Globe,
   MessageCircle // Added WhatsApp
 } from "lucide-react";
 import { useEffect, useState } from "react";

@@ -6,19 +6,20 @@ import {
   X, ArrowRight, CheckCircle2,
   Ship, Wrench, Waves, Anchor, Users, Settings, 
   Globe, Box, Droplets, Building2, Construction,
-  Cpu, Zap, Activity, PenTool, LayoutTemplate
+  Cpu, Zap, Activity, PenTool, LayoutTemplate,
+  LucideIcon
 } from "lucide-react";
 import Link from "next/link";
 
 interface Service {
   name: string;
-  icon: any;
+  icon: LucideIcon;
   desc: string;
 }
 
 interface Industry {
   name: string;
-  icon: any;
+  icon: LucideIcon;
   desc: string;
 }
 
