@@ -88,7 +88,7 @@ function ContactContent() {
             <div className="flex flex-col lg:flex-row gap-16">
               
               {/* Left Column: Form (60%) */}
-              <div className="lg:w-[60%]">
+              <div id="contact-form" className="lg:w-[60%] scroll-mt-32">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}

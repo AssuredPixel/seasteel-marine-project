@@ -121,7 +121,7 @@ export default function Navbar() {
           className="hidden md:block"
         >
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="bg-cyan text-white font-body font-semibold text-[14px] px-[28px] py-[14px] rounded-[6px] hover:bg-cyan-dark transition-all duration-200 shadow-glow active:scale-95 inline-block"
           >
             Get a Quote
@@ -206,7 +206,7 @@ export default function Navbar() {
                   Get in Touch
                 </p>
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   onClick={() => setIsOpen(false)}
                   className="w-full bg-cyan text-white font-body font-bold text-lg px-8 py-5 rounded-[8px] hover:bg-cyan-dark transition-all duration-300 block text-center shadow-glow active:scale-[0.98]"
                 >

@@ -90,7 +90,7 @@ export default function Hero() {
               Explore Our Services
             </Link>
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="w-full sm:w-auto px-10 py-4 border-2 border-white text-white text-center font-body font-bold rounded-[6px] hover:bg-white hover:text-navy transition-all duration-300 active:scale-95 text-[15px]"
             >
               Contact Fleet
