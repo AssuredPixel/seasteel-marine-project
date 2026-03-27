@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function CTABanner() {
@@ -37,12 +38,18 @@ export default function CTABanner() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <button className="w-full sm:w-auto bg-cyan text-white font-body font-bold text-[15px] px-10 py-5 rounded-[6px] hover:bg-cyan-bright transition-all duration-300 shadow-xl active:scale-95">
+            <Link 
+              href="/contact#contact-form"
+              className="w-full sm:w-auto bg-cyan text-white text-center font-body font-bold text-[15px] px-10 py-5 rounded-[6px] hover:bg-cyan-bright transition-all duration-300 shadow-xl active:scale-95"
+            >
               Get a Free Quote
-            </button>
-            <button className="w-full sm:w-auto border-2 border-white text-white font-body font-bold text-[15px] px-10 py-[18px] rounded-[6px] hover:bg-white hover:text-navy transition-all duration-300 active:scale-95">
+            </Link>
+            <a 
+              href="tel:+2348036692362"
+              className="w-full sm:w-auto border-2 border-white text-center text-white font-body font-bold text-[15px] px-10 py-[18px] rounded-[6px] hover:bg-white hover:text-navy transition-all duration-300 active:scale-95"
+            >
               Call Us Now
-            </button>
+            </a>
           </div>
 
           <div className="flex flex-col items-center">
