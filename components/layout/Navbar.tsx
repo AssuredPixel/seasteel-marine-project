@@ -59,89 +59,87 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-navy/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1" 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+          ? "bg-navy/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1"
           : "bg-navy md:bg-transparent py-2 md:py-4 border-b border-white/10 md:border-transparent"
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-        {/* Left: Logo Slot */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <Link href="/" className="flex items-center shrink-0">
-            <Image
-              src="/images/logo.svg"
-              alt="Seasteel Logo"
-              width={160}
-              height={40}
-              priority
-              className="h-8 w-auto object-contain"
-            />
-          </Link>
-        </motion.div>
-
-        {/* Center: Desktop Nav Links (Animated) */}
-        <motion.ul
-          variants={navContainerVariants}
-          initial="hidden"
-          animate="visible"
-          className="hidden md:flex items-center gap-8"
-        >
-          {navLinks.map(({ href, label }) => {
-            const isActive = pathname === href;
-            return (
-              <motion.li key={href} variants={navItemVariants}>
-                <Link
-                  href={href}
-                  className={`font-body text-[15px] font-medium transition-colors duration-200 relative py-1 ${
-                    isActive ? "text-white" : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  {label}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeUnderline"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-cyan"
-                    />
-                  )}
-                </Link>
-              </motion.li>
-            );
-          })}
-        </motion.ul>
-
-        {/* Right: CTA Button (Animated) */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
-          className="hidden md:block"
-        >
-          <Link
-            href="/contact#contact-form"
-            className="bg-cyan text-white font-body font-semibold text-[14px] px-[28px] py-[14px] rounded-[6px] hover:bg-cyan-dark transition-all duration-200 shadow-glow active:scale-95 inline-block"
+          }`}
+      >
+        <nav className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+          {/* Left: Logo Slot */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            Get a Quote
-          </Link>
-        </motion.div>
+            <Link href="/" className="flex items-center shrink-0">
+              <Image
+                src="/images/white-bg-logo.jpg"
+                alt="Seasteel Marine Logo"
+                width={260}
+                height={80}
+                priority
+                className="h-12 md:h-20 w-auto object-contain"
+              />
+            </Link>
+          </motion.div>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className="md:hidden text-cyan p-2"
-          aria-label="Open menu"
-        >
-          <Menu size={28} />
-        </button>
-      </nav>
-    </header>
+          {/* Center: Desktop Nav Links (Animated) */}
+          <motion.ul
+            variants={navContainerVariants}
+            initial="hidden"
+            animate="visible"
+            className="hidden md:flex items-center gap-8"
+          >
+            {navLinks.map(({ href, label }) => {
+              const isActive = pathname === href;
+              return (
+                <motion.li key={href} variants={navItemVariants}>
+                  <Link
+                    href={href}
+                    className={`font-body text-[15px] font-medium transition-colors duration-200 relative py-1 ${isActive ? "text-white" : "text-white/80 hover:text-white"
+                      }`}
+                  >
+                    {label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeUnderline"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-cyan"
+                      />
+                    )}
+                  </Link>
+                </motion.li>
+              );
+            })}
+          </motion.ul>
 
-    {/* Mobile Menu Overlay */}
-    <AnimatePresence>
+          {/* Right: CTA Button (Animated) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+            className="hidden md:block"
+          >
+            <Link
+              href="/contact#contact-form"
+              className="bg-cyan text-white font-body font-semibold text-[14px] px-[28px] py-[14px] rounded-[6px] hover:bg-cyan-dark transition-all duration-200 shadow-glow active:scale-95 inline-block"
+            >
+              Get a Quote
+            </Link>
+          </motion.div>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="md:hidden text-cyan p-2"
+            aria-label="Open menu"
+          >
+            <Menu size={28} />
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -151,13 +149,17 @@ export default function Navbar() {
           >
             {/* Background Pattern/Blur */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan/10 via-transparent to-transparent pointer-events-none" />
-            
+
             <div className="relative z-10 flex flex-col h-full p-8 md:p-12">
               <div className="flex items-center justify-between mb-16">
                 <Link href="/" onClick={() => setIsOpen(false)}>
-                  <span className="font-heading text-2xl font-bold text-white tracking-tight">
-                    Sea<span className="text-cyan">steel</span>
-                  </span>
+                  <Image
+                    src="/images/seasteel-logo-stitch.png"
+                    alt="Seasteel Marine Logo"
+                    width={200}
+                    height={60}
+                    className="h-12 w-auto object-contain"
+                  />
                 </Link>
                 <button
                   onClick={() => setIsOpen(false)}
@@ -168,7 +170,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <motion.ul 
+              <motion.ul
                 variants={{
                   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
                   hidden: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
@@ -178,7 +180,7 @@ export default function Navbar() {
                 className="flex flex-col gap-6"
               >
                 {navLinks.map(({ href, label }) => (
-                  <motion.li 
+                  <motion.li
                     key={href}
                     variants={{
                       hidden: { opacity: 0, x: -20 },
@@ -188,9 +190,8 @@ export default function Navbar() {
                     <Link
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-4xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${
-                        pathname === href ? "text-cyan" : "text-white/90 hover:text-white"
-                      }`}
+                      className={`text-4xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-cyan" : "text-white/90 hover:text-white"
+                        }`}
                     >
                       {label}
                     </Link>
@@ -198,7 +199,7 @@ export default function Navbar() {
                 ))}
               </motion.ul>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}

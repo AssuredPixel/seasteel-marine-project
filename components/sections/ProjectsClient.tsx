@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/ui/PageHero";
+import Partners from "@/components/sections/Partners";
 
 const projectCategories = [
   "All",
@@ -144,30 +145,8 @@ export default function ProjectsClient() {
           </div>
         </section>
 
-        {/* Partners Section */}
-        <section className="py-24 bg-white px-6 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="text-cyan text-xs font-heading font-black uppercase tracking-[0.3em] block mb-4">Verification</span>
-              <h2 className="text-navy text-3xl md:text-4xl font-heading font-black italic">
-                Our Esteemed Clients & Partners
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-              {partners.map((partner, index) => (
-                <div 
-                  key={index}
-                  className="bg-white p-6 rounded-[16px] border border-gray-200 shadow-sm hover:border-cyan hover:-translate-y-1 transition-all duration-300 flex items-center justify-center text-center group"
-                >
-                  <span className="text-navy font-heading font-black text-[15px] opacity-80 group-hover:opacity-100 group-hover:text-cyan transition-colors">
-                    {partner}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Partners Section (Replaced with common component) */}
+        <Partners />
 
         {/* CTA */}
         <section className="bg-navy py-24 px-6 text-center">

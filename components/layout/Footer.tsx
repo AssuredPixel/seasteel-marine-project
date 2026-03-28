@@ -1,13 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import LinkNext from "next/link";
-import { 
-  Facebook, 
-  Linkedin, 
-  Twitter, 
-  MapPin, 
-  Phone, 
-  Mail, 
+import {
+  Facebook,
+  Linkedin,
+  Twitter,
+  MapPin,
+  Phone,
+  Mail,
   MessageCircle // Added WhatsApp
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -41,13 +42,17 @@ export default function Footer() {
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left items-center md:items-start">
-          
+
           {/* Column 1: Logo & Social */}
           <div className="space-y-6">
             <LinkNext href="/" className="inline-block">
-              <span className="font-heading text-2xl font-bold tracking-tight">
-                Sea<span className="text-cyan">steel</span>
-              </span>
+              <Image
+                src="/images/white-bg-logo.jpg"
+                alt="Seasteel Marine Logo"
+                width={260}
+                height={80}
+                className="h-12 md:h-20 w-auto object-contain"
+              />
             </LinkNext>
             <p className="text-gray-300 font-body leading-relaxed max-w-xs">
               The Exceptional Marine Service Provider.
@@ -81,8 +86,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {quickLinks.map(({ href, label }) => (
                 <li key={label}>
-                  <LinkNext 
-                    href={href} 
+                  <LinkNext
+                    href={href}
                     className="text-gray-300 hover:text-cyan transition-colors duration-200 font-body text-sm"
                   >
                     {label}
@@ -100,8 +105,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {services.map(({ href, label }) => (
                 <li key={label}>
-                  <LinkNext 
-                    href={href} 
+                  <LinkNext
+                    href={href}
                     className="text-gray-300 hover:text-cyan transition-colors duration-200 font-body text-sm"
                   >
                     {label}
