@@ -30,18 +30,6 @@ const projects = [
   { id: 9, title: "Network E&P Consultancy", category: "Engineering", image: "/images/cta-rig.png" },
 ];
 
-const partners = [
-  "ExxonMobil",
-  "Nigeria LNG Limited (NLNG)",
-  "Chevron Nigeria Limited",
-  "Seplat Energy Plc",
-  "Nigerian Agip Oil Company (NAOC)",
-  "PAN Ocean Oil Corporation",
-  "Oando Energy Resources",
-  "Network E&P Nigeria Limited",
-  "BG Exploration",
-  "TotalEnergies",
-];
 
 export default function ProjectsClient() {
   const [activeCategory, setActiveCategory] = useState("All");
