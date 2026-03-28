@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import LinkNext from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -154,13 +155,13 @@ export default function ProjectsClient() {
             <h2 className="text-white text-3xl md:text-[40px] font-heading font-black leading-tight mb-10">
               Deliver Your Next Offshore <br className="hidden md:block" /> Project With Precision.
             </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto bg-cyan text-white px-10 py-5 rounded-[6px] font-body font-bold text-[15px] hover:bg-cyan-bright transition-all shadow-xl">
+            <div className="flex justify-center">
+              <LinkNext 
+                href="/contact#contact-form"
+                className="w-full sm:w-auto bg-cyan text-white px-12 py-5 rounded-[6px] font-body font-bold text-[16px] hover:bg-cyan-bright transition-all shadow-glow active:scale-95 inline-block"
+              >
                 Partner With Us
-              </button>
-              <button className="w-full sm:w-auto border-2 border-white text-white px-10 py-[18px] rounded-[6px] font-body font-bold text-[15px] hover:bg-white hover:text-navy transition-all">
-                Project Gallery
-              </button>
+              </LinkNext>
             </div>
           </div>
         </section>
