@@ -64,7 +64,7 @@ export default function Navbar() {
           : "bg-cyan md:bg-transparent py-2 md:py-4 border-b border-white/10 md:border-transparent"
           }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-6 md:px-12 py-3 md:py-4 flex items-center justify-between">
           {/* Left: Logo Slot */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -150,23 +150,23 @@ export default function Navbar() {
             {/* Background Pattern/Blur */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan/10 via-transparent to-transparent pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col h-full p-8 md:p-12">
+            <div className="relative z-10 flex flex-col h-full p-6 md:p-12">
               <div className="flex items-center justify-between mb-16">
                 <Link href="/" onClick={() => setIsOpen(false)}>
                   <Image
                     src="/images/SEASTEEL-MARINE_watermark.png"
                     alt="Seasteel Marine Logo"
-                    width={200}
-                    height={60}
-                    className="h-12 w-auto object-contain"
+                    width={180}
+                    height={50}
+                    className="h-10 w-auto object-contain"
                   />
                 </Link>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="bg-white/5 hover:bg-white/10 text-white p-3 rounded-full transition-colors border border-white/10"
+                  className="bg-white/5 hover:bg-white/10 text-white p-2 rounded-full transition-colors border border-white/10"
                   aria-label="Close menu"
                 >
-                  <X size={28} />
+                  <X size={24} />
                 </button>
               </div>
 
@@ -177,7 +177,7 @@ export default function Navbar() {
                 }}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-4"
               >
                 {navLinks.map(({ href, label }) => (
                   <motion.li
@@ -190,7 +190,7 @@ export default function Navbar() {
                     <Link
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-4xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-white" : "text-white/90 hover:text-white"
+                      className={`text-2xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-white" : "text-white/90 hover:text-white"
                         }`}
                     >
                       {label}
@@ -211,7 +211,7 @@ export default function Navbar() {
                 <Link
                   href="/contact#contact-form"
                   onClick={() => setIsOpen(false)}
-                  className="w-full bg-navy text-white font-body font-bold text-lg px-8 py-5 rounded-[8px] hover:bg-navy-dark transition-all duration-300 block text-center shadow-glow active:scale-[0.98]"
+                  className="w-full bg-navy text-white font-body font-bold text-base px-6 py-4 rounded-[8px] hover:bg-navy-dark transition-all duration-300 block text-center shadow-glow active:scale-[0.98]"
                 >
                   Get a Quote
                 </Link>
