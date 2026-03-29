@@ -81,6 +81,11 @@ export default function RootLayout({
           {children}
         </main>
         <BackToTop />
+        <div className="fixed bottom-3 right-4 z-[100] pointer-events-none select-none hidden md:block">
+          <p className="text-[9px] uppercase tracking-[0.3em] font-black text-white/10 group hover:text-white/30 transition-all duration-500">
+            built by <span className="text-cyan/20 group-hover:text-cyan/50 transition-colors">assuredpixel</span>
+          </p>
+        </div>
       </body>
     </html>
   );
