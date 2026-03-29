@@ -60,8 +60,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-navy/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1"
-          : "bg-navy md:bg-transparent py-2 md:py-4 border-b border-white/10 md:border-transparent"
+          ? "bg-cyan/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1"
+          : "bg-cyan md:bg-transparent py-2 md:py-4 border-b border-white/10 md:border-transparent"
           }`}
       >
         <nav className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
@@ -73,7 +73,7 @@ export default function Navbar() {
           >
             <Link href="/" className="flex items-center shrink-0">
               <Image
-                src="/images/white-bg-logo.jpg"
+                src="/images/SEASTEEL-MARINE_watermark.png"
                 alt="Seasteel Marine Logo"
                 width={260}
                 height={80}
@@ -103,7 +103,7 @@ export default function Navbar() {
                     {isActive && (
                       <motion.div
                         layoutId="activeUnderline"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-cyan"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-navy"
                       />
                     )}
                   </Link>
@@ -130,7 +130,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(true)}
-            className="md:hidden text-cyan p-2"
+            className="md:hidden text-white p-2"
             aria-label="Open menu"
           >
             <Menu size={28} />
@@ -145,7 +145,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-navy flex flex-col"
+            className="fixed inset-0 z-[60] bg-cyan flex flex-col"
           >
             {/* Background Pattern/Blur */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan/10 via-transparent to-transparent pointer-events-none" />
@@ -154,7 +154,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between mb-16">
                 <Link href="/" onClick={() => setIsOpen(false)}>
                   <Image
-                    src="/images/seasteel-logo-stitch.png"
+                    src="/images/SEASTEEL-MARINE_watermark.png"
                     alt="Seasteel Marine Logo"
                     width={200}
                     height={60}
@@ -190,7 +190,7 @@ export default function Navbar() {
                     <Link
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-4xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-cyan" : "text-white/90 hover:text-white"
+                      className={`text-4xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-white" : "text-white/90 hover:text-white"
                         }`}
                     >
                       {label}
@@ -211,7 +211,7 @@ export default function Navbar() {
                 <Link
                   href="/contact#contact-form"
                   onClick={() => setIsOpen(false)}
-                  className="w-full bg-cyan text-white font-body font-bold text-lg px-8 py-5 rounded-[8px] hover:bg-cyan-dark transition-all duration-300 block text-center shadow-glow active:scale-[0.98]"
+                  className="w-full bg-navy text-white font-body font-bold text-lg px-8 py-5 rounded-[8px] hover:bg-navy-dark transition-all duration-300 block text-center shadow-glow active:scale-[0.98]"
                 >
                   Get a Quote
                 </Link>

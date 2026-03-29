@@ -11,10 +11,10 @@ const config: Config = {
       colors: {
         // Seasteel Brand Colors
         navy: {
-          DEFAULT: "#0D1B5E",
+          DEFAULT: "#0D1117",
           light: "#1A2B8F",
-          dark: "#081240",
-          deep: "#0D1B5E",
+          dark: "#080B10",
+          deep: "#0D1117",
         },
         cyan: {
           DEFAULT: "#00C9A7",
