@@ -39,6 +39,7 @@ const config: Config = {
           red: "#E84545",
           white: "#F0F4F8",
         },
+        "off-white": "#F5F8FC",
         // Semantic aliases
         background: "var(--background)",
         foreground: "var(--foreground)",

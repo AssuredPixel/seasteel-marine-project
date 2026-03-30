@@ -60,11 +60,11 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-cyan/90 backdrop-blur-md border-b border-white/10 shadow-lg py-1"
-          : "bg-cyan md:bg-transparent py-2 md:py-4 border-b border-white/10 md:border-transparent"
+          ? "bg-off-white/95 backdrop-blur-md border-b border-navy/10 shadow-sm py-1"
+          : "bg-off-white md:bg-transparent py-1 md:py-2 border-b border-navy/10 md:border-transparent"
           }`}
       >
-        <nav className="max-w-7xl mx-auto px-6 md:px-12 py-3 md:py-4 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-6 md:px-12 py-2 md:py-3 flex items-center justify-between">
           {/* Left: Logo Slot */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -96,14 +96,16 @@ export default function Navbar() {
                 <motion.li key={href} variants={navItemVariants}>
                   <Link
                     href={href}
-                    className={`font-body text-[15px] font-medium transition-colors duration-200 relative py-1 ${isActive ? "text-white" : "text-white/80 hover:text-white"
+                    className={`font-body text-[15px] font-medium transition-colors duration-200 relative py-1 ${scrolled
+                        ? (isActive ? "text-navy" : "text-navy/70 hover:text-navy")
+                        : (isActive ? "text-navy md:text-white" : "text-navy/70 md:text-white/80 hover:text-navy md:hover:text-white")
                       }`}
                   >
                     {label}
                     {isActive && (
                       <motion.div
                         layoutId="activeUnderline"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-navy"
+                        className={`absolute bottom-0 left-0 right-0 h-[2px] ${scrolled ? "bg-navy" : "bg-navy md:bg-white"}`}
                       />
                     )}
                   </Link>
@@ -130,7 +132,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(true)}
-            className="md:hidden text-white p-2"
+            className={`md:hidden p-2 transition-colors ${scrolled ? "text-navy" : "text-navy md:text-white"}`}
             aria-label="Open menu"
           >
             <Menu size={28} />
@@ -145,10 +147,10 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-cyan flex flex-col"
+            className="fixed inset-0 z-[60] bg-off-white flex flex-col"
           >
             {/* Background Pattern/Blur */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-cyan/10 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-navy/5 via-transparent to-transparent pointer-events-none" />
 
             <div className="relative z-10 flex flex-col h-full p-6 md:p-12">
               <div className="flex items-center justify-between mb-16">
@@ -163,7 +165,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="bg-white/5 hover:bg-white/10 text-white p-2 rounded-full transition-colors border border-white/10"
+                  className="bg-navy/5 hover:bg-navy/10 text-navy p-2 rounded-full transition-colors border border-navy/10"
                   aria-label="Close menu"
                 >
                   <X size={24} />
@@ -190,7 +192,7 @@ export default function Navbar() {
                     <Link
                       href={href}
                       onClick={() => setIsOpen(false)}
-                      className={`text-2xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-white" : "text-white/90 hover:text-white"
+                      className={`text-2xl md:text-5xl font-heading font-bold transition-all hover:pl-2 ${pathname === href ? "text-navy" : "text-navy/70 hover:text-navy"
                         }`}
                     >
                       {label}
@@ -205,7 +207,7 @@ export default function Navbar() {
                 transition={{ delay: 0.6 }}
                 className="mt-auto pt-12 border-t border-white/10"
               >
-                <p className="text-white/50 font-body text-sm mb-6 uppercase tracking-widest font-bold">
+                <p className="text-navy/50 font-body text-sm mb-6 uppercase tracking-widest font-bold">
                   Get in Touch
                 </p>
                 <Link

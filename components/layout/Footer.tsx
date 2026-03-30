@@ -38,7 +38,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-cyan border-t border-navy/10 text-white">
+    <footer className="bg-off-white border-t border-navy/10 text-navy">
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left items-center md:items-start">
@@ -49,12 +49,12 @@ export default function Footer() {
               <Image
                 src="/images/SEASTEEL-MARINE_watermark.png"
                 alt="Seasteel Marine Logo"
-                width={260}
-                height={80}
-                className="h-12 md:h-20 w-auto object-contain"
+                width={320}
+                height={100}
+                className="h-10 md:h-24 w-auto object-contain"
               />
             </LinkNext>
-            <p className="text-white/80 font-body leading-relaxed max-w-xs">
+            <p className="text-navy/80 font-body leading-relaxed max-w-xs">
               The Exceptional Marine Service Provider.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-white border-b border-navy/20 pb-2 inline-block">
+            <h4 className="font-heading text-lg font-bold mb-6 text-navy border-b border-navy/20 pb-2 inline-block">
               Quick Links
             </h4>
             <ul className="space-y-4">
@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={label}>
                   <LinkNext
                     href={href}
-                    className="text-white/80 hover:text-white hover:pl-1 transition-all duration-200 font-body text-sm"
+                    className="text-navy/70 hover:text-navy hover:pl-1 transition-all duration-200 font-body text-sm"
                   >
                     {label}
                   </LinkNext>
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-white border-b border-navy/20 pb-2 inline-block">
+            <h4 className="font-heading text-lg font-bold mb-6 text-navy border-b border-navy/20 pb-2 inline-block">
               Our Services
             </h4>
             <ul className="space-y-4">
@@ -107,7 +107,7 @@ export default function Footer() {
                 <li key={label}>
                   <LinkNext
                     href={href}
-                    className="text-white/80 hover:text-white hover:pl-1 transition-all duration-200 font-body text-sm"
+                    className="text-navy/70 hover:text-navy hover:pl-1 transition-all duration-200 font-body text-sm"
                   >
                     {label}
                   </LinkNext>
@@ -118,26 +118,26 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div className="space-y-6">
-            <h4 className="font-heading text-lg font-bold mb-6 text-white border-b border-navy/20 pb-2 inline-block">
+            <h4 className="font-heading text-lg font-bold mb-6 text-navy border-b border-navy/20 pb-2 inline-block">
               Get in Touch
             </h4>
-            <div className="space-y-4 text-white font-body flex flex-col items-center md:items-start text-sm">
+            <div className="space-y-4 text-navy font-body flex flex-col items-center md:items-start text-sm">
               <div className="flex gap-3">
-                <MapPin className="text-white shrink-0" size={18} />
+                <MapPin className="text-navy shrink-0" size={18} />
                 <span>
                   No. 5 Afaha Uqua–Obokidim Street, Eket L.G.A, Akwa Ibom State
                 </span>
               </div>
-              <a href="tel:+2348036692362" className="flex gap-3 items-center hover:text-white/80 transition-colors">
-                <Phone className="text-white shrink-0" size={18} />
+              <a href="tel:+2348036692362" className="flex gap-3 items-center hover:text-navy/80 transition-colors">
+                <Phone className="text-navy shrink-0" size={18} />
                 <span>+234 803 669 2362</span>
               </a>
-              <a href="https://wa.me/2348036692362" className="flex gap-3 items-center hover:text-white/80 transition-colors font-bold">
-                <MessageCircle className="text-white shrink-0" size={18} />
+              <a href="https://wa.me/2348036692362" className="flex gap-3 items-center hover:text-navy/80 transition-colors font-bold">
+                <MessageCircle className="text-navy shrink-0" size={18} />
                 <span>WhatsApp Available</span>
               </a>
-              <a href="mailto:seasteelmarine@gmail.com" className="flex gap-3 items-center hover:text-white/80 transition-colors">
-                <Mail className="text-white shrink-0" size={18} />
+              <a href="mailto:seasteelmarine@gmail.com" className="flex gap-3 items-center hover:text-navy/80 transition-colors">
+                <Mail className="text-navy shrink-0" size={18} />
                 <span>seasteelmarine@gmail.com</span>
               </a>
             </div>
@@ -147,12 +147,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-navy/5 py-6 bg-cyan-dark">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60 font-body text-center md:text-left">
+      <div className="border-t border-navy/5 py-6 bg-off-white/50">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-navy/50 font-body text-center md:text-left">
           <p>
             &copy; {year || "2026"} Seasteel Marine & Offshore Services Limited. All rights reserved.
           </p>
-          <p className="font-medium tracking-widest text-white/40">
+          <p className="font-medium tracking-widest text-navy/30">
             RC 1060991
           </p>
         </div>
