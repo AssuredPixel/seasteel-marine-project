@@ -6,8 +6,8 @@
    CSS Custom Properties
    ============================ */
 :root {
-  --background: #0A1628;
-  --foreground: #F0F4F8;
+  --background: #0D1117;
+  --foreground: #F5F8FC;
   --font-montserrat: "Montserrat", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
@@ -83,7 +83,7 @@ p {
    ============================ */
 ::selection {
   background: rgba(0, 201, 167, 0.3);
-  color: #F0F4F8;
+  color: #F5F8FC;
 }
 
 /* ============================

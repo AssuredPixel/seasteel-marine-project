@@ -12,7 +12,7 @@ const partners = [
   { name: "PAN Ocean Oil Corporation", logo: "/images/pan.jpg" },
   { name: "Oando Energy Resources", logo: "/images/oando.jpg" },
   { name: "Network E&P Nigeria Limited", logo: "/images/networkE&P.jpg" },
-  { name: "BG Exploration", logo: null },
+  { name: "BG Exploration", logo: "/images/bg-com-logo.jpg" },
 ];
 
 const containerVariants: Variants = {
@@ -37,7 +37,7 @@ const itemVariants: Variants = {
 
 export default function Partners() {
   return (
-    <section className="bg-surface-muted py-24">
+    <section className="bg-off-white py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Section Header */}

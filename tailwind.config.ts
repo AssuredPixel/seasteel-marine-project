@@ -12,9 +12,8 @@ const config: Config = {
         // Seasteel Brand Colors
         navy: {
           DEFAULT: "#0D1117",
-          light: "#1A2B8F",
-          dark: "#080B10",
           deep: "#0D1117",
+          light: "#2E4057",
         },
         cyan: {
           DEFAULT: "#00C9A7",
@@ -51,7 +50,7 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "hero-gradient":
-          "linear-gradient(135deg, #0A1628 0%, #0F2037 50%, #0A1628 100%)",
+          "linear-gradient(135deg, #0D1117 0%, #2E4057 50%, #0D1117 100%)",
       },
       boxShadow: {
         glow: "0 0 20px rgba(0, 201, 167, 0.3)",

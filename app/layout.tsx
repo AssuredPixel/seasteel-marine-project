@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://seasteelmarine.com"),
+  metadataBase: new URL("https://seasteelsmarine.com"),
   title: {
     default: "Seasteel Marine & Offshore Services | Nigeria's Premier Marine Company",
     template: "%s | Seasteel Marine",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://seasteelmarine.com",
+    url: "https://seasteelsmarine.com",
     siteName: "Seasteel Marine",
     title: "Seasteel Marine & Offshore Services | Nigeria's Premier Marine Company",
     description:

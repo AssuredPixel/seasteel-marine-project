@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "About Us | Seasteel Marine & Offshore Services Limited",
       description: "Learn about Seasteel Marine's history, mission, and leadership in offshore engineering since 2012.",
-      url: "https://seasteelmarine.com/about",
+      url: "https://seasteelsmarine.com/about",
     },
   };
 }

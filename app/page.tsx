@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "Seasteel Marine & Offshore Services | Nigeria's Premier Marine Company",
       description: "Seasteel Marine is Nigeria's leading engineering and offshore services provider, delivering world-class maritime solutions since 2012.",
-      url: "https://seasteelmarine.com",
+      url: "https://seasteelsmarine.com",
       images: [
         {
           url: "/images/hero-ship.png",
@@ -41,9 +41,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Seasteel Marine & Offshore Services Limited",
-  "image": "https://seasteelmarine.com/images/hero-ship.png",
-  "@id": "https://seasteelmarine.com",
-  "url": "https://seasteelmarine.com",
+  "image": "https://seasteelsmarine.com/images/hero-ship.png",
+  "@id": "https://seasteelsmarine.com",
+  "url": "https://seasteelsmarine.com",
   "telephone": "+234 803 669 2362",
   "email": "seasteelmarine@gmail.com",
   "address": {

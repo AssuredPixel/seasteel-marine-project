@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: "Our Services | Marine & Offshore Solutions — Seasteel Marine",
       description: "Explore our comprehensive range of marine engineering, shipbuilding, and offshore support services.",
-      url: "https://seasteelmarine.com/services",
+      url: "https://seasteelsmarine.com/services",
     },
   };
 }
