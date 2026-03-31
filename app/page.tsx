@@ -45,7 +45,7 @@ const jsonLd = {
   "@id": "https://seasteelsmarine.com",
   "url": "https://seasteelsmarine.com",
   "telephone": "+234 803 669 2362",
-  "email": "seasteelmarine@gmail.com",
+  "email": "support@seasteelmarine.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Eket",

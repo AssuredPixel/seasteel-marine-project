@@ -136,9 +136,9 @@ export default function Footer() {
                 <MessageCircle className="text-navy shrink-0" size={18} />
                 <span>WhatsApp Available</span>
               </a>
-              <a href="mailto:seasteelmarine@gmail.com" className="flex gap-3 items-center hover:text-navy/80 transition-colors">
+              <a href="mailto:support@seasteelmarine.com" className="flex gap-3 items-center hover:text-navy/80 transition-colors">
                 <Mail className="text-navy shrink-0" size={18} />
-                <span>seasteelmarine@gmail.com</span>
+                <span>support@seasteelmarine.com</span>
               </a>
             </div>
           </div>

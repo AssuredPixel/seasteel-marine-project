@@ -40,7 +40,7 @@ const services = [
 const contactCards = [
   { icon: Phone, label: "Phone", value: "+234 803 669 2362", href: "tel:+2348036692362" },
   { icon: MessageCircle, label: "WhatsApp", value: "+234 803 669 2362", href: "https://wa.me/2348036692362" },
-  { icon: Mail, label: "Email", value: "seasteelmarine@gmail.com", href: "mailto:seasteelmarine@gmail.com" },
+  { icon: Mail, label: "Email", value: "support@seasteelmarine.com", href: "mailto:support@seasteelmarine.com" },
   { icon: MapPin, label: "Address", value: "Eket, Akwa Ibom State, Nigeria", href: "#" },
 ];
 
@@ -65,7 +65,7 @@ function ContactContent() {
     const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
     
     setTimeout(() => {
-      window.location.href = `mailto:seasteelmarine@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:support@seasteelmarine.com?subject=${subject}&body=${body}`;
       setIsSubmitting(false);
     }, 800);
   };
