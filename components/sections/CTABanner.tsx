@@ -40,7 +40,7 @@ export default function CTABanner() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link 
               href="/contact#contact-form"
-              className="w-full sm:w-auto bg-cyan text-white text-center font-body font-bold text-[15px] px-10 py-5 rounded-[6px] hover:bg-cyan-bright transition-all duration-300 shadow-xl active:scale-95"
+              className="w-full sm:w-auto bg-cyan-bright text-white text-center font-body font-bold text-[15px] px-10 py-5 rounded-[6px] hover:bg-cyan-dark transition-all duration-300 active:scale-95"
             >
               Get a Free Quote
             </Link>

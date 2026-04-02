@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import { 
-  Ship, 
-  Wrench, 
-  Waves, 
-  Anchor, 
-  Users, 
+import {
+  Ship,
+  Wrench,
+  Waves,
+  Anchor,
+  Users,
   Settings
 } from "lucide-react";
 
@@ -71,7 +71,7 @@ export default function ServicesGrid() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Headers */}
         <div className="text-center max-w-3xl mx-auto mb-16 px-4">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -79,7 +79,7 @@ export default function ServicesGrid() {
           >
             Our Services
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -92,7 +92,7 @@ export default function ServicesGrid() {
         </div>
 
         {/* Card Grid */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -103,16 +103,16 @@ export default function ServicesGrid() {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="group bg-white rounded-[24px] p-10 border border-gray-100 border-t-[4px] border-t-cyan shadow-sm hover:shadow-2xl transition-all duration-500"
+              className="group bg-white rounded-[24px] p-10 border border-gray-100 border-t-[4px] border-t-cyan-bright hover:border-t-cyan shadow-sm hover:shadow-2xl transition-all duration-500"
             >
               <div className="mb-8 inline-block p-4 rounded-2xl bg-cyan/5 text-cyan-bright group-hover:bg-cyan group-hover:text-white transition-all duration-300">
                 <service.icon size={44} strokeWidth={1.2} />
               </div>
-              
+
               <h3 className="text-navy text-[20px] font-heading font-black mb-4 group-hover:text-cyan transition-colors duration-300">
                 {service.title}
               </h3>
-              
+
               <p className="text-steel/70 font-body text-[15px] leading-relaxed">
                 {service.description}
               </p>
@@ -121,7 +121,7 @@ export default function ServicesGrid() {
         </motion.div>
 
         {/* Bottom CTA */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -130,7 +130,7 @@ export default function ServicesGrid() {
         >
           <Link
             href="/services"
-            className="inline-block bg-navy-dark text-white font-body font-bold text-[15px] px-12 py-5 rounded-[12px] hover:bg-navy transition-all duration-200 shadow-xl active:scale-95"
+            className="inline-block bg-cyan-bright text-white font-body font-bold text-[15px] px-12 py-5 rounded-[12px] hover:bg-cyan-dark transition-all duration-200 active:scale-95"
           >
             Explore All Marine Services
           </Link>

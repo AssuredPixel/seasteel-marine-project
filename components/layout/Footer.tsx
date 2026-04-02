@@ -69,7 +69,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white hover:bg-navy-dark hover:scale-110 transition-all duration-300 shadow-glow"
+                  className="w-10 h-10 rounded-full bg-cyan-bright flex items-center justify-center text-white hover:bg-navy-dark hover:scale-110 transition-all duration-300 shadow-glow"
                   aria-label="Social link"
                 >
                   <Icon size={20} />
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-navy border-b border-navy/20 pb-2 inline-block">
+            <h4 className="font-heading text-lg font-bold mb-6 text-cyan-bright border-b border-navy/20 pb-2 inline-block">
               Quick Links
             </h4>
             <ul className="space-y-4">
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Column 3: Our Services */}
           <div>
-            <h4 className="font-heading text-lg font-bold mb-6 text-navy border-b border-navy/20 pb-2 inline-block">
+            <h4 className="font-heading text-lg font-bold mb-6 text-cyan-bright border-b border-navy/20 pb-2 inline-block">
               Our Services
             </h4>
             <ul className="space-y-4">
@@ -118,7 +118,7 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div className="space-y-6">
-            <h4 className="font-heading text-lg font-bold mb-6 text-navy border-b border-navy/20 pb-2 inline-block">
+            <h4 className="font-heading text-lg font-bold mb-6 text-cyan-bright border-b border-navy/20 pb-2 inline-block">
               Get in Touch
             </h4>
             <div className="space-y-4 text-navy font-body flex flex-col items-center md:items-start text-sm">
@@ -152,9 +152,15 @@ export default function Footer() {
           <p>
             &copy; {year || "2026"} Seasteel Marine & Offshore Services Limited. All rights reserved.
           </p>
-          <p className="font-medium tracking-widest text-navy/30">
-            RC 1060991
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="font-medium tracking-widest text-navy/40">
+              RC 1060991
+            </p>
+            <span className="hidden sm:block text-navy/20">|</span>
+            <p className="uppercase tracking-[0.2em] font-bold text-navy/50">
+              Built by <span className="text-cyan-bright transition-colors font-black">AssuredPixel</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
