@@ -36,14 +36,7 @@ const navItemVariants: Variants = {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -59,10 +52,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-off-white/95 backdrop-blur-md border-b border-navy/10 shadow-sm py-1"
-          : "bg-off-white md:bg-transparent py-1 md:py-2 border-b border-navy/10 md:border-transparent"
-          }`}
+        className="relative z-50 bg-off-white py-1 md:py-2 border-b border-navy/10 transition-all duration-500"
       >
         <nav className="max-w-7xl mx-auto px-6 md:px-12 py-2 md:py-3 flex items-center justify-between">
           {/* Left: Logo Slot */}
@@ -96,16 +86,15 @@ export default function Navbar() {
                 <motion.li key={href} variants={navItemVariants}>
                   <Link
                     href={href}
-                    className={`font-body text-[15px] font-medium transition-colors duration-200 relative py-1 ${scrolled
-                        ? (isActive ? "text-navy" : "text-navy/70 hover:text-navy")
-                        : (isActive ? "text-navy md:text-white" : "text-navy/70 md:text-white/80 hover:text-navy md:hover:text-white")
-                      }`}
+                    className={`font-body text-[15px] font-medium transition-colors duration-200 relative py-1 ${
+                      isActive ? "text-navy" : "text-navy/70 hover:text-navy"
+                    }`}
                   >
                     {label}
                     {isActive && (
                       <motion.div
                         layoutId="activeUnderline"
-                        className={`absolute bottom-0 left-0 right-0 h-[2px] ${scrolled ? "bg-navy" : "bg-navy md:bg-white"}`}
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-navy"
                       />
                     )}
                   </Link>
@@ -123,7 +112,7 @@ export default function Navbar() {
           >
             <Link
               href="/contact#contact-form"
-              className="bg-cyan text-white font-body font-semibold text-[14px] px-[28px] py-[14px] rounded-[6px] hover:bg-cyan-dark transition-all duration-200 shadow-glow active:scale-95 inline-block"
+              className="bg-cyan-bright text-white font-body font-semibold text-[14px] px-[28px] py-[14px] rounded-[6px] hover:bg-cyan-dark transition-all duration-200 active:scale-95 inline-block"
             >
               Get a Quote
             </Link>
@@ -132,7 +121,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(true)}
-            className={`md:hidden p-2 transition-colors ${scrolled ? "text-navy" : "text-navy md:text-white"}`}
+            className="md:hidden p-2 transition-colors text-navy"
             aria-label="Open menu"
           >
             <Menu size={28} />
